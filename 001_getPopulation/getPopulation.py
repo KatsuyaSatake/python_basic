@@ -1,12 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Feb 10 11:29:09 2020
-
-@author: tfx746
 """
-
-import re
-import requests
 import json
 import urllib
 import urllib.request
