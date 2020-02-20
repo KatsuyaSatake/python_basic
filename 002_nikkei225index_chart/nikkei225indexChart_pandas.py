@@ -19,8 +19,10 @@ path = 'nikkei-225-index-historical-chart-data.csv'
 
 # add_subplot()でグラフを描画する領域を追加。
 fig = plt.figure()
-ax1 = fig.add_subplot(2,1,1)
-ax2 = fig.add_subplot(2,1,2)
+ax = fig.add_subplot(1,1,1)
+
+# ax1 = fig.add_subplot(2,1,1)
+# ax2 = fig.add_subplot(2,1,2)
 # ax3 = fig.add_subplot(2,1,3)
 # ax4 = fig.add_subplot(2,1,4)
 
@@ -35,7 +37,11 @@ CSVファイル(セパレータ=’,’)をDataFrameとして取り込む
 df = pd.read_csv(path)
 
 df['new-date'] = pd.to_datetime(df['date'])
-df1 = df.loc[:, ['new-date', 'value']]
+df1 = df.loc[:, ['new-date', ' value']]
 
-ax1.plot(df1.index, df1['value'])
-ax2.plot(df1.index, df1['value'])
+ax.plot(df1['new-date'], df1[' value'])
+ax.grid(True)
+# ax1.plot(df1['new-date'], df1[' value'])
+# ax2.plot(df1['new-date'], df1[' value'])
+# ax1.grid(True)
+# ax2.grid(True)
